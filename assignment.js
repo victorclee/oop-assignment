@@ -1,13 +1,15 @@
 class Course {
+  #price;
+
   get price() {
-    return '$' + this._price;
+    return '$' + this.#price;
   }
 
   set price(value) {
     if (value < 0) {
       throw 'Invalid value!';
     }
-    this._price = value;
+    this.#price = value;
   }
 
   constructor(courseTitle, coursePrice, courseLength) {
@@ -17,7 +19,7 @@ class Course {
   }
 
   calculateValue() {
-    return this.length / this._price;
+    return this.length / this.#price;
   }
 
   printSummary() {
